@@ -59,38 +59,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Centos7.X安装Jdk</title>
-    <url>/2021/06/07/centos-java-jdk/</url>
-    <content><![CDATA[<p>JDK是 Java 语言的软件开发工具包，主要用于移动设备、嵌入式设备上的java应用程序。JDK是整个java开发的核心，它包含了JAVA的运行环境（JVM+Java系统类库）和JAVA工具。</p>
-<span id="more"></span>
-
-<h4 id="JDK下载"><a href="#JDK下载" class="headerlink" title="JDK下载"></a>JDK下载</h4><ul>
-<li><p>由于下载速度原因，此处jdk采用华为镜像（<a href="https://repo.huaweicloud.com/java/jdk/%EF%BC%89">https://repo.huaweicloud.com/java/jdk/）</a></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">wget https://repo.huaweicloud.com/java/jdk/8u191-b12/jdk-8u191-linux-x64.tar.gz<br></code></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="JDK解压"><a href="#JDK解压" class="headerlink" title="JDK解压"></a>JDK解压</h4><ul>
-<li><p>将下载好的JDK保存在自己所创建的路径，并通过tar命令解压。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">tar zxvf jdk-8u191-linux-x64.tar.gz<br></code></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="配置JDK"><a href="#配置JDK" class="headerlink" title="配置JDK"></a>配置JDK</h4><ul>
-<li><p>使用 vi &#x2F;etc&#x2F;profile 命令，编辑 &#x2F;etc&#x2F;profile文件</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">export JAVA_HOME=/usr/local/java/jdk1.8.0_191<br><br>export JRE_HOME=/usr/local/java/jdk1.8.0_191/jre<br><br>export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH<br><br>export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH<br></code></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="生效JDK"><a href="#生效JDK" class="headerlink" title="生效JDK"></a>生效JDK</h4><ul>
-<li>使用 source &#x2F;etc&#x2F;profile 命令，生效JDK的配置</li>
-</ul>
-<h4 id="查看JDK"><a href="#查看JDK" class="headerlink" title="查看JDK"></a>查看JDK</h4><ul>
-<li>使用 java -version 命令，测试JDK的配置是否成功</li>
-</ul>
-]]></content>
-      <categories>
-        <category>计算机</category>
-      </categories>
-      <tags>
-        <tag>centos</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo博客搭建</title>
     <url>/2021/05/18/hexo-agin/</url>
     <content><![CDATA[<p>Hexo是一套快速、简洁且高效的博客框架</p>
@@ -131,6 +99,38 @@
 ]]></content>
       <tags>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Centos7.X安装Jdk</title>
+    <url>/2021/06/07/centos-java-jdk/</url>
+    <content><![CDATA[<p>JDK是 Java 语言的软件开发工具包，主要用于移动设备、嵌入式设备上的java应用程序。JDK是整个java开发的核心，它包含了JAVA的运行环境（JVM+Java系统类库）和JAVA工具。</p>
+<span id="more"></span>
+
+<h4 id="JDK下载"><a href="#JDK下载" class="headerlink" title="JDK下载"></a>JDK下载</h4><ul>
+<li><p>由于下载速度原因，此处jdk采用华为镜像（<a href="https://repo.huaweicloud.com/java/jdk/%EF%BC%89">https://repo.huaweicloud.com/java/jdk/）</a></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">wget https://repo.huaweicloud.com/java/jdk/8u191-b12/jdk-8u191-linux-x64.tar.gz<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="JDK解压"><a href="#JDK解压" class="headerlink" title="JDK解压"></a>JDK解压</h4><ul>
+<li><p>将下载好的JDK保存在自己所创建的路径，并通过tar命令解压。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">tar zxvf jdk-8u191-linux-x64.tar.gz<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="配置JDK"><a href="#配置JDK" class="headerlink" title="配置JDK"></a>配置JDK</h4><ul>
+<li><p>使用 vi &#x2F;etc&#x2F;profile 命令，编辑 &#x2F;etc&#x2F;profile文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">export JAVA_HOME=/usr/local/java/jdk1.8.0_191<br><br>export JRE_HOME=/usr/local/java/jdk1.8.0_191/jre<br><br>export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH<br><br>export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="生效JDK"><a href="#生效JDK" class="headerlink" title="生效JDK"></a>生效JDK</h4><ul>
+<li>使用 source &#x2F;etc&#x2F;profile 命令，生效JDK的配置</li>
+</ul>
+<h4 id="查看JDK"><a href="#查看JDK" class="headerlink" title="查看JDK"></a>查看JDK</h4><ul>
+<li>使用 java -version 命令，测试JDK的配置是否成功</li>
+</ul>
+]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>centos</tag>
       </tags>
   </entry>
   <entry>
@@ -193,6 +193,33 @@
       </categories>
       <tags>
         <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux安装OpenJDK</title>
+    <url>/2023/11/24/linux-openjdk/</url>
+    <content><![CDATA[<p>由于CentOS已停止更新优先建议使用Debian 11及以上操作系统，如需使用CentOS请采用CentOS 7.9，本次安装采用Debian系统。</p>
+<span id="more"></span>
+
+<h2 id="1-JDK下载"><a href="#1-JDK下载" class="headerlink" title="1. JDK下载"></a>1. JDK下载</h2><p>OpenJDK下载：<a href="https://adoptium.net/zh-CN/temurin/releases/?version=8">官方地址</a></p>
+<p>选择Linux对应版本进行下载 正常情况下载的文件名类似<code>OpenJDK8U-jdk_x64_linux_hotspot_\*.tar.gz</code></p>
+<h2 id="2-安装准备"><a href="#2-安装准备" class="headerlink" title="2. 安装准备"></a>2. 安装准备</h2><h3 id="2-1-更新操作系统"><a href="#2-1-更新操作系统" class="headerlink" title="2.1 更新操作系统"></a>2.1 更新操作系统</h3><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">apt update &amp;&amp; apt install vim -y &amp;&amp; apt install zip -y &amp;&amp; apt install unzip -y<br></code></pre></td></tr></table></figure>
+
+<h3 id="2-2-创建目录"><a href="#2-2-创建目录" class="headerlink" title="2.2 创建目录"></a>2.2 创建目录</h3><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">mkdir</span> -p /data<br></code></pre></td></tr></table></figure>
+
+<h3 id="2-3-上传文件"><a href="#2-3-上传文件" class="headerlink" title="2.3 上传文件"></a>2.3 上传文件</h3><p>将下载好的JDK，上传文件至<code>/data</code>目录下</p>
+<h3 id="2-4-解压文件"><a href="#2-4-解压文件" class="headerlink" title="2.4 解压文件"></a>2.4 解压文件</h3><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-comment"># 解压JDK并重命名</span><br><span class="hljs-built_in">cd</span> /data/ &amp;&amp; <span class="hljs-built_in">mkdir</span> -p /data/jdk &amp;&amp; tar -xzvf OpenJDK*.tar.gz -C /data/jdk --strip-components 1 &amp;&amp; <span class="hljs-built_in">rm</span> -rf OpenJDK*.tar.gz<br></code></pre></td></tr></table></figure>
+
+<h2 id="3-安装JDK"><a href="#3-安装JDK" class="headerlink" title="3. 安装JDK"></a>3. 安装JDK</h2><h3 id="3-1-配置JDK环境变量"><a href="#3-1-配置JDK环境变量" class="headerlink" title="3.1 配置JDK环境变量"></a>3.1 配置JDK环境变量</h3><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;export JAVA_HOME=/data/jdk</span><br><span class="hljs-string">export CLASSPATH=.:\$JAVA_HOME/jre/lib/rt.jar:\$JAVA_HOME/lib/dt.jar:\$JAVA_HOME/lib/tools.jar</span><br><span class="hljs-string">export PATH=\$PATH:\$JAVA_HOME/bin&quot;</span> &gt;&gt; /etc/profile<br></code></pre></td></tr></table></figure>
+
+<h3 id="3-2-更新配置文件并验证版本"><a href="#3-2-更新配置文件并验证版本" class="headerlink" title="3.2 更新配置文件并验证版本"></a>3.2 更新配置文件并验证版本</h3><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">source</span> /etc/profile &amp;&amp; java -version<br></code></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
       </tags>
   </entry>
   <entry>
@@ -325,82 +352,6 @@
       </categories>
       <tags>
         <tag>Nginx</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>redis的安装与配置</title>
-    <url>/2021/07/19/redis-insta/</url>
-    <content><![CDATA[<p>Redis 是完全开源的，遵守 BSD 协议，是一个高性能的 key-value 数据库。</p>
-<span id="more"></span>
-
-<h4 id="获取redis资源"><a href="#获取redis资源" class="headerlink" title="获取redis资源"></a>获取redis资源</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">wegt https://download.redis.io/releases/redis-6.2.4.tar.gz<br></code></pre></td></tr></table></figure>
-
-<ul>
-<li>以上是redis官方最新版本</li>
-<li>若需其它版本 可以进入  <a href="https://redis.io/">官网查看</a></li>
-</ul>
-<h4 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">tar -zxvf redis-6.2.4.tar.gz<br></code></pre></td></tr></table></figure>
-
-<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>首先进入目录</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cd redis-6.2.4<br></code></pre></td></tr></table></figure>
-
-<p>编译</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">make<br></code></pre></td></tr></table></figure>
-
-<p>进入src进行安装</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cd src<br><br>make install PREFIX=/usr/local/redis<br></code></pre></td></tr></table></figure>
-
-<h4 id="移动配置文件到安装目录下"><a href="#移动配置文件到安装目录下" class="headerlink" title="移动配置文件到安装目录下"></a>移动配置文件到安装目录下</h4><p>创建etc文件</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">mkdir /usr/local/redis/etc<br></code></pre></td></tr></table></figure>
-
-<p>移动 redis.conf文件</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">mv redis.conf /usr/local/redis/etc<br></code></pre></td></tr></table></figure>
-
-<h4 id="配置redis为后台启动"><a href="#配置redis为后台启动" class="headerlink" title="配置redis为后台启动"></a>配置redis为后台启动</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">vi /usr/local/redis/etc/redis.conf //将daemonize no 改成daemonize yes<br></code></pre></td></tr></table></figure>
-
-<h4 id="将redis加入到开机启动"><a href="#将redis加入到开机启动" class="headerlink" title="将redis加入到开机启动"></a>将redis加入到开机启动</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">vi /etc/rc.local<br></code></pre></td></tr></table></figure>
-
-<p>在里面添加内容：<code>/usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf</code></p>
-<p>意思就是开机调用这段开启redis的命令</p>
-<h4 id="开启redis"><a href="#开启redis" class="headerlink" title="开启redis"></a>开启redis</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">/usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf <br></code></pre></td></tr></table></figure>
-
-<h4 id="配置redis-cli指令"><a href="#配置redis-cli指令" class="headerlink" title="配置redis-cli指令"></a>配置redis-cli指令</h4><p>将redis-cli,redis-server拷贝到bin下，让redis-cli指令可以在任意目录下直接使用</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cp /usr/local/redis/bin/redis-server /usr/local/bin/<br><br>cp /usr/local/redis/bin/redis-cli /usr/local/bin/<br></code></pre></td></tr></table></figure>
-
-<h4 id="设置redis密码"><a href="#设置redis密码" class="headerlink" title="设置redis密码"></a>设置redis密码</h4><figure class="highlight arduino"><table><tr><td class="code"><pre><code class="hljs arduino">redis-cli<br><br><span class="hljs-comment">//查看密码</span><br>config get requirepass<br><br><span class="hljs-comment">//设置密码</span><br>config set requirepass yourpassword<br></code></pre></td></tr></table></figure>
-
-<p>重启redis服务</p>
-<p>输入 redis-cli 进入命令模式，使用 auth ‘*****’ （****为你设置的密码）登陆</p>
-<h4 id="让外网能够访问redis"><a href="#让外网能够访问redis" class="headerlink" title="让外网能够访问redis"></a>让外网能够访问redis</h4><p>首先进行配置防火墙,开放6379端口</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">firewall-cmd --zone=public --add-port=6379/tcp --permanent<br></code></pre></td></tr></table></figure>
-
-<p>重启防火墙以使配置即时生效</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">systemctl restart firewalld<br></code></pre></td></tr></table></figure>
-
-<p>查看系统所有开放的端口</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">firewall-cmd --zone=public --list-ports<br></code></pre></td></tr></table></figure>
-
-<h4 id="可能会遇到的问题"><a href="#可能会遇到的问题" class="headerlink" title="可能会遇到的问题"></a>可能会遇到的问题</h4><p>可能开放端口后依旧无法访问，原因是虽然防火墙开放了6379端口，但是外网还是无法访问的，因为redis监听的是127.0.0.1:6379，并不监听外网的请求。这时候需要这样做。</p>
-<ul>
-<li>把文件夹目录里的redis.conf配置文件里的bind 127.0.0.1前面加#注释掉</li>
-<li>redis-cli连接到redis后，通过 <code>config get daemonize</code>和<code>config get protected-mode</code> 是不是都为no，如果不是，就用<code>config set 配置名 属性</code> 改为no。</li>
-</ul>
-<h4 id="常用redis命令"><a href="#常用redis命令" class="headerlink" title="常用redis命令"></a>常用redis命令</h4><ul>
-<li><p>redis-server &#x2F;usr&#x2F;local&#x2F;redis&#x2F;etc&#x2F;redis.conf &#x2F;&#x2F;启动redis</p>
-</li>
-<li><p>pkill redis  &#x2F;&#x2F;停止redis</p>
-</li>
-<li><p>ps -ef |grep redis &#x2F;&#x2F;检测后台进程是否存在</p>
-</li>
-<li><p>netstat -lntp | grep 6379 &#x2F;&#x2F;检测6379端口是否在监听</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>redis</tag>
       </tags>
   </entry>
   <entry>
@@ -539,6 +490,82 @@
       </tags>
   </entry>
   <entry>
+    <title>redis的安装与配置</title>
+    <url>/2021/07/19/redis-insta/</url>
+    <content><![CDATA[<p>Redis 是完全开源的，遵守 BSD 协议，是一个高性能的 key-value 数据库。</p>
+<span id="more"></span>
+
+<h4 id="获取redis资源"><a href="#获取redis资源" class="headerlink" title="获取redis资源"></a>获取redis资源</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">wegt https://download.redis.io/releases/redis-6.2.4.tar.gz<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>以上是redis官方最新版本</li>
+<li>若需其它版本 可以进入  <a href="https://redis.io/">官网查看</a></li>
+</ul>
+<h4 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">tar -zxvf redis-6.2.4.tar.gz<br></code></pre></td></tr></table></figure>
+
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>首先进入目录</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cd redis-6.2.4<br></code></pre></td></tr></table></figure>
+
+<p>编译</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">make<br></code></pre></td></tr></table></figure>
+
+<p>进入src进行安装</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cd src<br><br>make install PREFIX=/usr/local/redis<br></code></pre></td></tr></table></figure>
+
+<h4 id="移动配置文件到安装目录下"><a href="#移动配置文件到安装目录下" class="headerlink" title="移动配置文件到安装目录下"></a>移动配置文件到安装目录下</h4><p>创建etc文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">mkdir /usr/local/redis/etc<br></code></pre></td></tr></table></figure>
+
+<p>移动 redis.conf文件</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">mv redis.conf /usr/local/redis/etc<br></code></pre></td></tr></table></figure>
+
+<h4 id="配置redis为后台启动"><a href="#配置redis为后台启动" class="headerlink" title="配置redis为后台启动"></a>配置redis为后台启动</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">vi /usr/local/redis/etc/redis.conf //将daemonize no 改成daemonize yes<br></code></pre></td></tr></table></figure>
+
+<h4 id="将redis加入到开机启动"><a href="#将redis加入到开机启动" class="headerlink" title="将redis加入到开机启动"></a>将redis加入到开机启动</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">vi /etc/rc.local<br></code></pre></td></tr></table></figure>
+
+<p>在里面添加内容：<code>/usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf</code></p>
+<p>意思就是开机调用这段开启redis的命令</p>
+<h4 id="开启redis"><a href="#开启redis" class="headerlink" title="开启redis"></a>开启redis</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">/usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf <br></code></pre></td></tr></table></figure>
+
+<h4 id="配置redis-cli指令"><a href="#配置redis-cli指令" class="headerlink" title="配置redis-cli指令"></a>配置redis-cli指令</h4><p>将redis-cli,redis-server拷贝到bin下，让redis-cli指令可以在任意目录下直接使用</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cp /usr/local/redis/bin/redis-server /usr/local/bin/<br><br>cp /usr/local/redis/bin/redis-cli /usr/local/bin/<br></code></pre></td></tr></table></figure>
+
+<h4 id="设置redis密码"><a href="#设置redis密码" class="headerlink" title="设置redis密码"></a>设置redis密码</h4><figure class="highlight arduino"><table><tr><td class="code"><pre><code class="hljs arduino">redis-cli<br><br><span class="hljs-comment">//查看密码</span><br>config get requirepass<br><br><span class="hljs-comment">//设置密码</span><br>config set requirepass yourpassword<br></code></pre></td></tr></table></figure>
+
+<p>重启redis服务</p>
+<p>输入 redis-cli 进入命令模式，使用 auth ‘*****’ （****为你设置的密码）登陆</p>
+<h4 id="让外网能够访问redis"><a href="#让外网能够访问redis" class="headerlink" title="让外网能够访问redis"></a>让外网能够访问redis</h4><p>首先进行配置防火墙,开放6379端口</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">firewall-cmd --zone=public --add-port=6379/tcp --permanent<br></code></pre></td></tr></table></figure>
+
+<p>重启防火墙以使配置即时生效</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">systemctl restart firewalld<br></code></pre></td></tr></table></figure>
+
+<p>查看系统所有开放的端口</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">firewall-cmd --zone=public --list-ports<br></code></pre></td></tr></table></figure>
+
+<h4 id="可能会遇到的问题"><a href="#可能会遇到的问题" class="headerlink" title="可能会遇到的问题"></a>可能会遇到的问题</h4><p>可能开放端口后依旧无法访问，原因是虽然防火墙开放了6379端口，但是外网还是无法访问的，因为redis监听的是127.0.0.1:6379，并不监听外网的请求。这时候需要这样做。</p>
+<ul>
+<li>把文件夹目录里的redis.conf配置文件里的bind 127.0.0.1前面加#注释掉</li>
+<li>redis-cli连接到redis后，通过 <code>config get daemonize</code>和<code>config get protected-mode</code> 是不是都为no，如果不是，就用<code>config set 配置名 属性</code> 改为no。</li>
+</ul>
+<h4 id="常用redis命令"><a href="#常用redis命令" class="headerlink" title="常用redis命令"></a>常用redis命令</h4><ul>
+<li><p>redis-server &#x2F;usr&#x2F;local&#x2F;redis&#x2F;etc&#x2F;redis.conf &#x2F;&#x2F;启动redis</p>
+</li>
+<li><p>pkill redis  &#x2F;&#x2F;停止redis</p>
+</li>
+<li><p>ps -ef |grep redis &#x2F;&#x2F;检测后台进程是否存在</p>
+</li>
+<li><p>netstat -lntp | grep 6379 &#x2F;&#x2F;检测6379端口是否在监听</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>SpingIoc浅析</title>
     <url>/2021/09/10/springioc/</url>
     <content><![CDATA[<p>学习过Spring框架的人一定都会听过Spring的IoC(控制反转) 、DI(依赖注入)这两个概念，今天分享网上的一些技术大牛们对Spring框架的IOC的理解以及谈谈我对Spring Ioc的理解。</p>
@@ -557,7 +584,41 @@
       </tags>
   </entry>
   <entry>
-    <title>Windows/Office激活方法</title>
+    <title>微服务间通信和RestTemplate</title>
+    <url>/2021/08/08/template/</url>
+    <content><![CDATA[<p>各种协议众多，那么在微服务中服务通信该如何进行通信呢？</p>
+<span id="more"></span>
+
+<h4 id="如何解决微服务的服务通信问题？"><a href="#如何解决微服务的服务通信问题？" class="headerlink" title="如何解决微服务的服务通信问题？"></a>如何解决微服务的服务通信问题？</h4><p>第一种: 服务间使用HTTP协议，调用rest风格的API进行数据传输（JSON）。（普遍使用）</p>
+<p>第二种：服务间使用RPC协议，通过远程过程进行调用（二进制）。</p>
+<p>总结：通过OSI七层模型（如下图）可以看出PRC（传输层）的传输效率远高于HTTP（应用层）。众所周知，在众多语言中不是全部都支持RPC协议但是基本都支持HTTP协议，所以服务之间的高度解耦，故Spring官方也推荐使用HTTP协议进行数据传输。</p>
+<p><img  src="/images/pic/detailed/osi.png"  ><span class="image-caption">osi</span></p>
+<h4 id="什么是RestTemplate？"><a href="#什么是RestTemplate？" class="headerlink" title="什么是RestTemplate？"></a>什么是RestTemplate？</h4><p>传统情况下在java代码里访问restful服务，一般使用<code>Apache</code>的<code>HttpClient</code>。不过此种方法使用起来太过繁琐。spring提供了一种简单便捷的模板类来进行操作，这就是<code>RestTemplate</code>。</p>
+<h4 id="服务之间的简单调用"><a href="#服务之间的简单调用" class="headerlink" title="服务之间的简单调用"></a>服务之间的简单调用</h4><ul>
+<li>A服务</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@GetMapping(&quot;/Aservice&quot;)</span><br>	<span class="hljs-keyword">public</span> String <span class="hljs-title function_">Aservice</span><span class="hljs-params">()</span> &#123;<br>	  <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;A service ok！！！&quot;</span>;<br>	&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>B服务</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@GetMapping(&quot;/Bservice&quot;)</span><br>  <span class="hljs-keyword">public</span> String <span class="hljs-title function_">Bservice</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;B service ok！！！&quot;</span>;<br>  &#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>在A服务调用B服务</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@GetMapping(&quot;/Aservice&quot;)</span><br>	<span class="hljs-keyword">public</span> String <span class="hljs-title function_">Aservice</span><span class="hljs-params">()</span> &#123;<br>	  <span class="hljs-type">RestTemplate</span> <span class="hljs-variable">restTemplate</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RestTemplate</span>();<br>	  <span class="hljs-type">String</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> restTemplate.getForObject(<span class="hljs-string">&quot;http://localhost:8888/api/user/Bservice&quot;</span>, String.class);<br>	  <span class="hljs-keyword">return</span> result+<span class="hljs-string">&quot;调用成功！！！&quot;</span>;<br>	&#125;<br></code></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>微服务</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows/Office安装与激活</title>
     <url>/2023/11/23/win-office-activation/</url>
     <content><![CDATA[<p>每次重装电脑系统，都会重新要求激活windows和office，具体如何激活呢？</p>
 <span id="more"></span>
@@ -601,40 +662,6 @@
       </categories>
       <tags>
         <tag>Office</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>微服务间通信和RestTemplate</title>
-    <url>/2021/08/08/template/</url>
-    <content><![CDATA[<p>各种协议众多，那么在微服务中服务通信该如何进行通信呢？</p>
-<span id="more"></span>
-
-<h4 id="如何解决微服务的服务通信问题？"><a href="#如何解决微服务的服务通信问题？" class="headerlink" title="如何解决微服务的服务通信问题？"></a>如何解决微服务的服务通信问题？</h4><p>第一种: 服务间使用HTTP协议，调用rest风格的API进行数据传输（JSON）。（普遍使用）</p>
-<p>第二种：服务间使用RPC协议，通过远程过程进行调用（二进制）。</p>
-<p>总结：通过OSI七层模型（如下图）可以看出PRC（传输层）的传输效率远高于HTTP（应用层）。众所周知，在众多语言中不是全部都支持RPC协议但是基本都支持HTTP协议，所以服务之间的高度解耦，故Spring官方也推荐使用HTTP协议进行数据传输。</p>
-<p><img  src="/images/pic/detailed/osi.png"  ><span class="image-caption">osi</span></p>
-<h4 id="什么是RestTemplate？"><a href="#什么是RestTemplate？" class="headerlink" title="什么是RestTemplate？"></a>什么是RestTemplate？</h4><p>传统情况下在java代码里访问restful服务，一般使用<code>Apache</code>的<code>HttpClient</code>。不过此种方法使用起来太过繁琐。spring提供了一种简单便捷的模板类来进行操作，这就是<code>RestTemplate</code>。</p>
-<h4 id="服务之间的简单调用"><a href="#服务之间的简单调用" class="headerlink" title="服务之间的简单调用"></a>服务之间的简单调用</h4><ul>
-<li>A服务</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@GetMapping(&quot;/Aservice&quot;)</span><br>	<span class="hljs-keyword">public</span> String <span class="hljs-title function_">Aservice</span><span class="hljs-params">()</span> &#123;<br>	  <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;A service ok！！！&quot;</span>;<br>	&#125;<br></code></pre></td></tr></table></figure>
-
-<ul>
-<li>B服务</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@GetMapping(&quot;/Bservice&quot;)</span><br>  <span class="hljs-keyword">public</span> String <span class="hljs-title function_">Bservice</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;B service ok！！！&quot;</span>;<br>  &#125;<br></code></pre></td></tr></table></figure>
-
-<ul>
-<li>在A服务调用B服务</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@GetMapping(&quot;/Aservice&quot;)</span><br>	<span class="hljs-keyword">public</span> String <span class="hljs-title function_">Aservice</span><span class="hljs-params">()</span> &#123;<br>	  <span class="hljs-type">RestTemplate</span> <span class="hljs-variable">restTemplate</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">RestTemplate</span>();<br>	  <span class="hljs-type">String</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> restTemplate.getForObject(<span class="hljs-string">&quot;http://localhost:8888/api/user/Bservice&quot;</span>, String.class);<br>	  <span class="hljs-keyword">return</span> result+<span class="hljs-string">&quot;调用成功！！！&quot;</span>;<br>	&#125;<br></code></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>微服务</tag>
       </tags>
   </entry>
   <entry>
