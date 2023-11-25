@@ -6,12 +6,12 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Centos7.X安装Jdk - Lau-Star</title>
+  <title>Windows - Lau-Star</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="google" content="notranslate" />
   
-  <meta name="description" content="JDK是 Java 语言的软件开发工具包，主要用于移动...">
+  
   <meta name="author" content="Lau-Star">
   <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
   <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
@@ -154,7 +154,7 @@
         <i class="iconfont iconsearch j-navbar-search"></i>
       
     </div>
-    <div class="center">Centos7.X安装Jdk</div>
+    <div class="center">标签</div>
     <div class="right">
       <i class="iconfont iconmenu j-navbar-menu"></i>
     </div>
@@ -190,128 +190,23 @@
   </div>
 </nav>
   <main id="main">
-  <div class="article-wrap">
-    <div class="row container">
-      <div class="col-xl-3"></div>
-      <div class="col-xl-6"><article class="article">
-  <div class="wrap">
-    <section class="head">
-  <img   class="lazyload" data-original="/images/pic/home/20210228214903.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
-  <div class="head-mask">
-    <h1 class="head-title">Centos7.X安装Jdk</h1>
-    <div class="head-info">
-      <span class="post-info-item"><i class="iconfont iconcalendar"></i>June 07, 2021</span>
-      
-        <span class="post-info-item">
-          <i class="iconfont iconeye"></i><span id="/2021/06/07/centos-java-jdk/" class="leancloud-counter" data-flag-title="Centos7.X安装Jdk"></span>
-        </span>
-        <span class="post-info-item">
-          <i class="iconfont iconheart"></i><span id="/2021/06/07/centos-java-jdk/" class="leancloud-like" data-flag-title="Centos7.X安装Jdk"></span>
-        </span>
-      
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>689</span>
-    </div>
-  </div>
-</section>
-    <section class="main">
-      <section class="content">
+  <section class="archive">
+    <div class="archive-container">
+      <div class="archive-post">
+        <h2 class="archive-total"># Windows</h2>
         
-          <p><p>JDK是 Java 语言的软件开发工具包，主要用于移动设备、嵌入式设备上的java应用程序。JDK是整个java开发的核心，它包含了JAVA的运行环境（JVM+Java系统类库）和JAVA工具。</p></p>
-        
-        <h4 id="JDK下载"><a href="#JDK下载" class="headerlink" title="JDK下载"></a>JDK下载</h4><ul>
-<li><p>由于下载速度原因，此处jdk采用华为镜像（<a target="_blank" rel="noopener" href="https://repo.huaweicloud.com/java/jdk/%EF%BC%89">https://repo.huaweicloud.com/java/jdk/）</a></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">wget https://repo.huaweicloud.com/java/jdk/8u191-b12/jdk-8u191-linux-x64.tar.gz<br></code></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="JDK解压"><a href="#JDK解压" class="headerlink" title="JDK解压"></a>JDK解压</h4><ul>
-<li><p>将下载好的JDK保存在自己所创建的路径，并通过tar命令解压。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">tar zxvf jdk-8u191-linux-x64.tar.gz<br></code></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="配置JDK"><a href="#配置JDK" class="headerlink" title="配置JDK"></a>配置JDK</h4><ul>
-<li><p>使用 vi &#x2F;etc&#x2F;profile 命令，编辑 &#x2F;etc&#x2F;profile文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">export JAVA_HOME=/usr/local/java/jdk1.8.0_191<br><br>export JRE_HOME=/usr/local/java/jdk1.8.0_191/jre<br><br>export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH<br><br>export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH<br></code></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="生效JDK"><a href="#生效JDK" class="headerlink" title="生效JDK"></a>生效JDK</h4><ul>
-<li>使用 source &#x2F;etc&#x2F;profile 命令，生效JDK的配置</li>
-</ul>
-<h4 id="查看JDK"><a href="#查看JDK" class="headerlink" title="查看JDK"></a>查看JDK</h4><ul>
-<li>使用 java -version 命令，测试JDK的配置是否成功</li>
-</ul>
-      </section>
-      <section class="extra">
-        
-          <ul class="copyright">
-  
-    <li><strong>本文作者：</strong>Lau-Star</li>
-    <li><strong>本文链接：</strong><a href="http://blog.lsir.vip/2021/06/07/centos-java-jdk/index.html" title="http:&#x2F;&#x2F;blog.lsir.vip&#x2F;2021&#x2F;06&#x2F;07&#x2F;centos-java-jdk&#x2F;index.html">http:&#x2F;&#x2F;blog.lsir.vip&#x2F;2021&#x2F;06&#x2F;07&#x2F;centos-java-jdk&#x2F;index.html</a></li>
-    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
-  
-</ul>
-        
-        
-          <section class="donate">
-  <div id="qrcode-donate">
-    <img   class="lazyload" data-original="/images/pay/alipay.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
-  </div>
-  <div class="icon">
-    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
-    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
-  </div>
-</section>
-        
-        
-  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos/" rel="tag">centos</a></li></ul> 
-
-        
-  <nav class="nav">
-    <a href="/2021/07/07/java-mybatis-interview/"><i class="iconfont iconleft"></i>Mybatis常见问题</a>
-    <a href="/2021/05/18/hexo-agin/">Hexo博客搭建<i class="iconfont iconright"></i></a>
-  </nav>
-
-      </section>
-      
-        <section class="comments">
-  
-    <div class="btn" id="comments-btn">查看评论</div>
-  
-  
-<div id="valine"></div>
-<script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-  window.onload = function () {
-    var loadValine = function () {
-      new Valine({
-        el: '#valine',
-        app_id: "colCgdvI5ROxxkZTtmgBkLE9-gzGzoHsz",
-        app_key: "B3qXXWhrkPj6mKYnj6K2dq5R",
-        placeholder: "雁过留痕",
-        avatar: "mp",
-        pageSize: "10",
-        lang: "zh-CN",
-      });
-    }
-    if ( true ) {
-      $("#comments-btn").on("click", function () {
-        $(this).hide();
-        loadValine();
-      });
-    } else {
-      loadValine();
-    }
-  };
-</script>
-
-</section>
-      
-    </section>
-  </div>
-</article></div>
-      <div class="col-xl-3">
         
           
+            <h3 class="archive-year">2023 年</h3>
+          
+          <div class="archive-item">
+            <a class="archive-date" href="/2023/11/23/win-office-activation/">11/23</a>
+            <a class="archive-title" href="/2023/11/23/win-office-activation/">Windows/Office安装与激活</a>
+          </div>
         
       </div>
     </div>
-  </div>
+  </section>
 </main>
   
 
@@ -332,10 +227,6 @@
       <div class="fab fab-plus">
     <i class="iconfont iconplus"></i>
   </div>
-  
-    <div class="fab fab-like">
-      <i class="iconfont iconheart"></i>
-    </div>
   
   
   

@@ -1,39 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Linux下安装Redis</title>
-    <url>/2021/10/24/LinuxInstallRedis/</url>
-    <content><![CDATA[<p>Linux想必大家都不陌生，我们写得大部分程序最后都会部署到Linux服务器上，下面详细记录在Linux服务器下安装Redis的过程。</p>
-<span id="more"></span>
-
-<h4 id="1、下载Redis"><a href="#1、下载Redis" class="headerlink" title="1、下载Redis"></a>1、下载Redis</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">wget http://download.redis.io/releases/redis-6.0.6.tar.gz<br></code></pre></td></tr></table></figure>
-
-<h4 id="2、解压"><a href="#2、解压" class="headerlink" title="2、解压"></a>2、解压</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">tar -zxvf redis-6.0.6.tar.gz<br></code></pre></td></tr></table></figure>
-
-<h4 id="3、安装"><a href="#3、安装" class="headerlink" title="3、安装"></a>3、安装</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">make<br></code></pre></td></tr></table></figure>
-
-<p>解压后进入到安装根目录下的src中执行安装命令。</p>
-<h4 id="4、运行"><a href="#4、运行" class="headerlink" title="4、运行"></a>4、运行</h4><p>等着编译完成后，执行ls 命令，会看到src目录下多了些启动文件，进入src目录，执行启动命令启动服务。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">./redis-server<br></code></pre></td></tr></table></figure>
-
-<h4 id="5、查看是否启动命令"><a href="#5、查看是否启动命令" class="headerlink" title="5、查看是否启动命令"></a>5、查看是否启动命令</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">ps aux|grep redis<br></code></pre></td></tr></table></figure>
-
-<h4 id="6、设置后台启动"><a href="#6、设置后台启动" class="headerlink" title="6、设置后台启动"></a>6、设置后台启动</h4><p>通过上述5步，已经可以实现Reids的正常运行，但是在我们关闭了命令窗口或者退出了服务器，则就自动关闭了。这样在实际情况下是不行的，必须保持后台运行，对此我们要进行如下操作，修改<code>redis.conf</code>文件。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">vim redis.conf<br></code></pre></td></tr></table></figure>
-
-<p>将<code>daemonize no</code>改为&#x3D;&gt;<code>daemonize yes</code></p>
-<p>操作完之后，就重新执行启动命令启动服务即可。</p>
-<h4 id="7、常用命令"><a href="#7、常用命令" class="headerlink" title="7、常用命令"></a>7、常用命令</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">启动命令：./redis/src/redis-server redis.conf<br><br>查看服务：ps aux|grep redis<br><br>停止：kill -9 pid值  或者 ./redis-cli shutdown<br><br>客户端连接：./redis-cli -h 127.0.0.1 -p 6379<br></code></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>服务器</category>
-      </categories>
-      <tags>
-        <tag>Redis</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>axios与ajax区别</title>
     <url>/2021/09/11/axios/</url>
     <content><![CDATA[<p>Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中</p>
@@ -102,35 +69,34 @@
       </tags>
   </entry>
   <entry>
-    <title>Centos7.X安装Jdk</title>
-    <url>/2021/06/07/centos-java-jdk/</url>
-    <content><![CDATA[<p>JDK是 Java 语言的软件开发工具包，主要用于移动设备、嵌入式设备上的java应用程序。JDK是整个java开发的核心，它包含了JAVA的运行环境（JVM+Java系统类库）和JAVA工具。</p>
+    <title>Linux安装mysql</title>
+    <url>/2023/11/25/linux-mysql/</url>
+    <content><![CDATA[<p>MySQL数据库服务是一个完全托管的数据库服务,可使用世界上最受欢迎的开源数据库来部署云原生应用程序。</p>
 <span id="more"></span>
 
-<h4 id="JDK下载"><a href="#JDK下载" class="headerlink" title="JDK下载"></a>JDK下载</h4><ul>
-<li><p>由于下载速度原因，此处jdk采用华为镜像（<a href="https://repo.huaweicloud.com/java/jdk/%EF%BC%89">https://repo.huaweicloud.com/java/jdk/）</a></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">wget https://repo.huaweicloud.com/java/jdk/8u191-b12/jdk-8u191-linux-x64.tar.gz<br></code></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="JDK解压"><a href="#JDK解压" class="headerlink" title="JDK解压"></a>JDK解压</h4><ul>
-<li><p>将下载好的JDK保存在自己所创建的路径，并通过tar命令解压。</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">tar zxvf jdk-8u191-linux-x64.tar.gz<br></code></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="配置JDK"><a href="#配置JDK" class="headerlink" title="配置JDK"></a>配置JDK</h4><ul>
-<li><p>使用 vi &#x2F;etc&#x2F;profile 命令，编辑 &#x2F;etc&#x2F;profile文件</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">export JAVA_HOME=/usr/local/java/jdk1.8.0_191<br><br>export JRE_HOME=/usr/local/java/jdk1.8.0_191/jre<br><br>export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH<br><br>export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH<br></code></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="生效JDK"><a href="#生效JDK" class="headerlink" title="生效JDK"></a>生效JDK</h4><ul>
-<li>使用 source &#x2F;etc&#x2F;profile 命令，生效JDK的配置</li>
-</ul>
-<h4 id="查看JDK"><a href="#查看JDK" class="headerlink" title="查看JDK"></a>查看JDK</h4><ul>
-<li>使用 java -version 命令，测试JDK的配置是否成功</li>
-</ul>
+<h2 id="1-设置MySQL软件源"><a href="#1-设置MySQL软件源" class="headerlink" title="1. 设置MySQL软件源"></a>1. 设置MySQL软件源</h2><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;deb http://repo.mysql.com/apt/debian/ buster mysql-5.7&quot;</span> | <span class="hljs-built_in">tee</span> /etc/apt/sources.list.d/mysql.list <br></code></pre></td></tr></table></figure>
+
+<h2 id="2-创建数据库存储目录"><a href="#2-创建数据库存储目录" class="headerlink" title="2. 创建数据库存储目录"></a>2. 创建数据库存储目录</h2><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">mkdir</span> -p /data/mysql/prod<br></code></pre></td></tr></table></figure>
+
+<h2 id="3-导入密钥更新软件源并安装数据库"><a href="#3-导入密钥更新软件源并安装数据库" class="headerlink" title="3.导入密钥更新软件源并安装数据库"></a>3.导入密钥更新软件源并安装数据库</h2><blockquote>
+<p>安装前请使用命令<code>dpkg -l | grep mariadb</code>检查操作系统是否安装了mariadb数据库，如果安装了请使用命令<code>apt remove mariadb* -y</code>进行卸载之后再执行下面命令</p>
+<p><strong>注意：</strong>在新的APT版本中apt-key命令已被弃用，并建议使用trusted.gpg.d目录管理密钥文件。为了解决”Warning: apt-key is deprecated”警告，您可以在安装完数据库后用以下命令来解决：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">apt install gpg -y &amp;&amp; gpg --dearmor --<span class="hljs-built_in">yes</span> -o /etc/apt/trusted.gpg.d/mysql.gpg /etc/apt/trusted.gpg<br></code></pre></td></tr></table></figure>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">apt install gnupg -y &amp;&amp; <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;-----BEGIN PGP PUBLIC KEY BLOCK-----</span><br><span class="hljs-string">Version: SKS 1.1.6</span><br><span class="hljs-string">Comment: Hostname: pgp.mit.edu</span><br><span class="hljs-string"></span><br><span class="hljs-string">mQINBGG4urcBEACrbsRa7tSSyxSfFkB+KXSbNM9rxYqoB78u107skReefq4/+Y72TpDvlDZL</span><br><span class="hljs-string">mdv/lK0IpLa3bnvsM9IE1trNLrfi+JES62kaQ6hePPgn2RqxyIirt2seSi3Z3n3jlEg+mSdh</span><br><span class="hljs-string">AvW+b+hFnqxo+TY0U+RBwDi4oO0YzHefkYPSmNPdlxRPQBMv4GPTNfxERx6XvVSPcL1+jQ4R</span><br><span class="hljs-string">2cQFBryNhidBFIkoCOszjWhm+WnbURsLheBp757lqEyrpCufz77zlq2gEi+wtPHItfqsx3rz</span><br><span class="hljs-string">xSRqatztMGYZpNUHNBJkr13npZtGW+kdN/xu980QLZxN+bZ88pNoOuzD6dKcpMJ0LkdUmTx5</span><br><span class="hljs-string">z9ewiFiFbUDzZ7PECOm2g3veJrwr79CXDLE1+39Hr8rDM2kDhSr9tAlPTnHVDcaYIGgSNIBc</span><br><span class="hljs-string">YfLmt91133klHQHBIdWCNVtWJjq5YcLQJ9TxG9GQzgABPrm6NDd1t9j7w1L7uwBvMB1wgpir</span><br><span class="hljs-string">RTPVfnUSCd+025PEF+wTcBhfnzLtFj5xD7mNsmDmeHkF/sDfNOfAzTE1v2wq0ndYU60xbL6/</span><br><span class="hljs-string">yl/Nipyr7WiQjCG0m3WfkjjVDTfs7/DXUqHFDOu4WMF9v+oqwpJXmAeGhQTWZC/QhWtrjrNJ</span><br><span class="hljs-string">AgwKpp263gDSdW70ekhRzsok1HJwX1SfxHJYCMFs2aH6ppzNsQARAQABtDZNeVNRTCBSZWxl</span><br><span class="hljs-string">YXNlIEVuZ2luZWVyaW5nIDxteXNxbC1idWlsZEBvc3Mub3JhY2xlLmNvbT6JAlQEEwEIAD4W</span><br><span class="hljs-string">IQSFm+jXxYb1OEMLGcJGe5QtOnm9KQUCYbi6twIbAwUJA8JnAAULCQgHAgYVCgkICwIEFgID</span><br><span class="hljs-string">AQIeAQIXgAAKCRBGe5QtOnm9KUewD/992sS31WLGoUQ6NoL7qOB4CErkqXtMzpJAKKg2jtBG</span><br><span class="hljs-string">G3rKE1/0VAg1D8AwEK4LcCO407wohnH0hNiUbeDck5x20pgS5SplQpuXX1K9vPzHeL/WNTb9</span><br><span class="hljs-string">8S3H2Mzj4o9obED6Ey52tTupttMF8pC9TJ93LxbJlCHIKKwCA1cXud3GycRN72eqSqZfJGds</span><br><span class="hljs-string">aeWLmFmHf6oee27d8XLoNjbyAxna/4jdWoTqmp8oT3bgv/TBco23NzqUSVPi+7ljS1hHvcJu</span><br><span class="hljs-string">oJYqaztGrAEf/lWIGdfl/kLEh8IYx8OBNUojh9mzCDlwbs83CBqoUdlzLNDdwmzu34Aw7xK1</span><br><span class="hljs-string">4RAVinGFCpo/7EWoX6weyB/zqevUIIE89UABTeFoGih/hx2jdQV/NQNthWTW0jH0hmPnajBV</span><br><span class="hljs-string">AJPYwAuO82rx2pnZCxDATMn0elOkTue3PCmzHBF/GT6c65aQC4aojj0+Veh787QllQ9FrWbw</span><br><span class="hljs-string">nTz+4fNzU/MBZtyLZ4JnsiWUs9eJ2V1g/A+RiIKu357Qgy1ytLqlgYiWfzHFlYjdtbPYKjDa</span><br><span class="hljs-string">ScnvtY8VO2Rktm7XiV4zKFKiaWp+vuVYpR0/7Adgnlj5Jt9lQQGOr+Z2VYx8SvBcC+by3XAt</span><br><span class="hljs-string">YkRHtX5u4MLlVS3gcoWfDiWwCpvqdK21EsXjQJxRr3dbSn0HaVj4FJZX0QQ7WZm6WLkCDQRh</span><br><span class="hljs-string">uLq3ARAA6RYjqfC0YcLGKvHhoBnsX29vy9Wn1y2JYpEnPUIB8X0VOyz5/ALv4Hqtl4THkH+m</span><br><span class="hljs-string">mMuhtndoq2BkCCk508jWBvKS1S+Bd2esB45BDDmIhuX3ozu9Xza4i1FsPnLkQ0uMZJv30ls2</span><br><span class="hljs-string">pXFmskhYyzmo6aOmH2536LdtPSlXtywfNV1HEr69V/AHbrEzfoQkJ/qvPzELBOjfjwtDPDeP</span><br><span class="hljs-string">iVgW9LhktzVzn/BjO7XlJxw4PGcxJG6VApsXmM3t2fPN9eIHDUq8ocbHdJ4en8/bJDXZd9eb</span><br><span class="hljs-string">QoILUuCg46hE3p6nTXfnPwSRnIRnsgCzeAz4rxDR4/Gv1Xpzv5wqpL21XQi3nvZKlcv7J1IR</span><br><span class="hljs-string">VdphK66De9GpVQVTqC102gqJUErdjGmxmyCA1OOORqEPfKTrXz5YUGsWwpH+4xCuNQP0qmre</span><br><span class="hljs-string">Rw3ghrH8potIr0iOVXFic5vJfBTgtcuEB6E6ulAN+3jqBGTaBML0jxgj3Z5VC5HKVbpg2DbB</span><br><span class="hljs-string">/wMrLwFHNAbzV5hj2Os5Zmva0ySP1YHB26pAW8dwB38GBaQvfZq3ezM4cRAo/iJ/GsVE98dZ</span><br><span class="hljs-string">EBO+Ml+0KYj+ZG+vyxzo20sweun7ZKT+9qZM90f6cQ3zqX6IfXZHHmQJBNv73mcZWNhDQOHs</span><br><span class="hljs-string">4wBoq+FGQWNqLU9xaZxdXw80r1viDAwOy13EUtcVbTkAEQEAAYkCPAQYAQgAJhYhBIWb6NfF</span><br><span class="hljs-string">hvU4QwsZwkZ7lC06eb0pBQJhuLq3AhsMBQkDwmcAAAoJEEZ7lC06eb0pSi8P/iy+dNnxrtiE</span><br><span class="hljs-string">Nn9vkkA7AmZ8RsvPXYVeDCDSsL7UfhbS77r2L1qTa2aB3gAZUDIOXln51lSxMeeLtOequLME</span><br><span class="hljs-string">V2Xi5km70rdtnja5SmWfc9fyExunXnsOhg6UG872At5CGEZU0c2Nt/hlGtOR3xbt3O/Uwl+d</span><br><span class="hljs-string">ErQPA4BUbW5K1T7OC6oPvtlKfF4bGZFloHgt2yE9YSNWZsTPe6XJSapemHZLPOxJLnhs3VBi</span><br><span class="hljs-string">rWE31QS0bRl5AzlO/fg7ia65vQGMOCOTLpgChTbcZHtozeFqva4IeEgE4xN+6r8WtgSYeGGD</span><br><span class="hljs-string">RmeMEVjPM9dzQObf+SvGd58u2z9f2agPK1H32c69RLoA0mHRe7Wkv4izeJUc5tumUY0e8Ojd</span><br><span class="hljs-string">enZZjT3hjLh6tM+mrp2oWnQIoed4LxUw1dhMOj0rYXv6laLGJ1FsW5eSke7ohBLcfBBTKnMC</span><br><span class="hljs-string">BohROHy2E63Wggfsdn3UYzfqZ8cfbXetkXuLS/OM3MXbiNjg+ElYzjgWrkayu7yLakZx+mx6</span><br><span class="hljs-string">sHPIJYm2hzkniMG29d5mGl7ZT9emP9b+CfqGUxoXJkjs0gnDl44bwGJ0dmIBu3ajVAaHODXy</span><br><span class="hljs-string">Y/zdDMGjskfEYbNXCAY2FRZSE58tgTvPKD++Kd2KGplMU2EIFT7JYfKhHAB5DGMkx92HUMid</span><br><span class="hljs-string">sTSKHe+QnnnoFmu4gnmDU31i</span><br><span class="hljs-string">=Xqbo</span><br><span class="hljs-string">-----END PGP PUBLIC KEY BLOCK-----&quot;</span> &gt;&gt; /data/mysql.key &amp;&amp; apt-key add /data/mysql.key &amp;&amp; <span class="hljs-built_in">rm</span> -rf /data/mysql.key &amp;&amp; apt update &amp;&amp; apt-get install mysql-server -y &amp;&amp; <span class="hljs-built_in">chown</span> -R mysql:mysql /data/mysql/prod/<br></code></pre></td></tr></table></figure>
+
+<h2 id="4-修改配置文件"><a href="#4-修改配置文件" class="headerlink" title="4. 修改配置文件"></a>4. 修改配置文件</h2><p>修改<code>/etc/mysql/my.cnf</code>配置文件，可根据实际情况修改对应的配置，例如存储位置<code>datadir</code>之类的参数，如下快捷命令可直接执行</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">echo</span> <span class="hljs-string">&#x27;!includedir /etc/mysql/conf.d/</span><br><span class="hljs-string"></span><br><span class="hljs-string">[mysqld]</span><br><span class="hljs-string"># 基础信息配置</span><br><span class="hljs-string">port=3306</span><br><span class="hljs-string">character_set_server=utf8mb4</span><br><span class="hljs-string">datadir=/data/mysql/prod</span><br><span class="hljs-string">socket=/var/run/mysqld/mysqld.sock</span><br><span class="hljs-string">symbolic-links=0</span><br><span class="hljs-string">log-error=/var/log/mysql/error.log</span><br><span class="hljs-string">pid-file=/var/run/mysqld/mysqld.pid</span><br><span class="hljs-string">sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION</span><br><span class="hljs-string"># 区分大小写配置 0：表名敏感字段不敏感 1：表名不敏感字段敏感 2：都不敏感</span><br><span class="hljs-string">lower_case_table_names=0</span><br><span class="hljs-string"></span><br><span class="hljs-string"># 连接配置</span><br><span class="hljs-string">max_connections=3000</span><br><span class="hljs-string">max_user_connections=3000</span><br><span class="hljs-string">max_connect_errors=100000</span><br><span class="hljs-string">max_allowed_packet=1G</span><br><span class="hljs-string">collation_server=utf8mb4_general_ci</span><br><span class="hljs-string">table_open_cache=8000</span><br><span class="hljs-string"></span><br><span class="hljs-string"># 日志配置</span><br><span class="hljs-string">expire_logs_days=30</span><br><span class="hljs-string">binlog_format=mixed</span><br><span class="hljs-string">slow_query_log=ON</span><br><span class="hljs-string">slow_query_log_file=/data/mysql/prod/slow.log</span><br><span class="hljs-string">long_query_time=3</span><br><span class="hljs-string">log_queries_not_using_indexes=on</span><br><span class="hljs-string"></span><br><span class="hljs-string"># innodb配置</span><br><span class="hljs-string">innodb_file_per_table=1</span><br><span class="hljs-string">innodb_buffer_pool_size=8G</span><br><span class="hljs-string">innodb_log_file_size=1024M</span><br><span class="hljs-string">innodb_log_buffer_size=64M</span><br><span class="hljs-string"></span><br><span class="hljs-string"># 集群配置 主从或主主只需要修改ID和偏移量即可</span><br><span class="hljs-string">server-id=1</span><br><span class="hljs-string">auto-increment-offset=1 </span><br><span class="hljs-string">auto-increment-increment=2</span><br><span class="hljs-string">log-bin=mysql-bin</span><br><span class="hljs-string">relay-log=localhost-relay-bin</span><br><span class="hljs-string">relay-log-index=slave-relay-bin.index</span><br><span class="hljs-string"></span><br><span class="hljs-string"># 需要同步的库 网上教程多是逗号隔开这是错误的配置方式</span><br><span class="hljs-string">binlog-do-db=cloudpivot</span><br><span class="hljs-string">binlog-do-db=h3yun_report</span><br><span class="hljs-string"></span><br><span class="hljs-string">[mysql]</span><br><span class="hljs-string">default_character_set=utf8mb4</span><br><span class="hljs-string">[client]</span><br><span class="hljs-string">default_character_set=utf8mb4&#x27;</span> &gt; /etc/mysql/my.cnf<br></code></pre></td></tr></table></figure>
+
+<h2 id="5-启动MySQL并设置开机自启动"><a href="#5-启动MySQL并设置开机自启动" class="headerlink" title="5. 启动MySQL并设置开机自启动"></a>5. 启动MySQL并设置开机自启动</h2><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">systemctl restart mysql &amp;&amp; systemctl <span class="hljs-built_in">enable</span> mysql<br></code></pre></td></tr></table></figure>
+
+<h2 id="6-登录MySQL"><a href="#6-登录MySQL" class="headerlink" title="6. 登录MySQL"></a>6. 登录MySQL</h2><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">mysql -u root -p<br></code></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>计算机</category>
+        <category>Linux</category>
       </categories>
       <tags>
-        <tag>centos</tag>
+        <tag>Mysql5.7</tag>
       </tags>
   </entry>
   <entry>
@@ -216,10 +182,59 @@
 
 ]]></content>
       <categories>
-        <category>计算机</category>
+        <category>Linux</category>
       </categories>
       <tags>
-        <tag>Linux</tag>
+        <tag>OpenJDK</tag>
+        <tag>JDK</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux安装Redis</title>
+    <url>/2023/11/25/linux-redis/</url>
+    <content><![CDATA[<p>Redis 是完全开源的，遵守 BSD 协议，是一个高性能的 key-value 数据库。下面详细记录在Linux服务器下安装Redis的过程。</p>
+<span id="more"></span>
+
+<h2 id="1-Redis下载"><a href="#1-Redis下载" class="headerlink" title="1. Redis下载"></a>1. Redis下载</h2><p>Linux上下载Reids的方式有很多种，可以通过电脑下载好压缩包上传至Linux服务器，也可以直接通过<code>wget</code>命令直接在Liunx服务器上进行下载。本次安装的是redis官方最新版本，若需其它版本 可以进入 <a href="https://redis.io/">Redis官网</a>查看其他版本。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">wget http://download.redis.io/releases/redis-6.0.6.tar.gz<br></code></pre></td></tr></table></figure>
+
+<h2 id="2-安装准备"><a href="#2-安装准备" class="headerlink" title="2. 安装准备"></a>2. 安装准备</h2><h3 id="2-1-解压并安装"><a href="#2-1-解压并安装" class="headerlink" title="2.1 解压并安装"></a>2.1 解压并安装</h3><p>解压后到解压根目录下的<code>src</code>中执行安装命令。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">tar -zxvf redis-6.0.6.tar.gz &amp;&amp; make<br></code></pre></td></tr></table></figure>
+
+<h2 id="3-运行服务"><a href="#3-运行服务" class="headerlink" title="3. 运行服务"></a>3. 运行服务</h2><p>等着编译完成后，执行ls 命令，会看到src目录下多了些启动文件，进入src目录，执行启动命令启动服务。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">./redis-server<br></code></pre></td></tr></table></figure>
+
+<h2 id="4-其他配置"><a href="#4-其他配置" class="headerlink" title="4. 其他配置"></a>4. 其他配置</h2><h3 id="4-1-后台启动"><a href="#4-1-后台启动" class="headerlink" title="4.1 后台启动"></a>4.1 后台启动</h3><p>通过上述步骤，已经可以实现Reids的正常运行，但是在我们关闭了命令窗口或者退出了服务器，服务就自动关闭。这样在实际情况下是不行的，必须保持后台运行，对此我们要进行如下操作，修改<code>redis.conf</code>文件。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">vim redis.conf<br></code></pre></td></tr></table></figure>
+
+<p>将<code>daemonize no</code>改为&#x3D;&gt;<code>daemonize yes</code>操作完之后，就重新执行启动命令启动服务即可。</p>
+<h3 id="4-3-配置redis-cli指令"><a href="#4-3-配置redis-cli指令" class="headerlink" title="4.3 配置redis-cli指令"></a>4.3 配置redis-cli指令</h3><p>将redis-cli,redis-server拷贝到bin下，让redis-cli指令可以在任意目录下直接使用</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">cp</span> /usr/local/redis/bin/redis-server /usr/local/bin/<br><br><span class="hljs-built_in">cp</span> /usr/local/redis/bin/redis-cli /usr/local/bin/<br></code></pre></td></tr></table></figure>
+
+<h3 id="4-2-设置redis密码"><a href="#4-2-设置redis密码" class="headerlink" title="4.2 设置redis密码"></a>4.2 设置redis密码</h3><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">redis-cli<br><br><span class="hljs-comment">#查看密码</span><br>config get requirepass<br><br><span class="hljs-comment">#设置密码</span><br>config <span class="hljs-built_in">set</span> requirepass yourpassword<br></code></pre></td></tr></table></figure>
+
+<h3 id="4-3-外网访问redis"><a href="#4-3-外网访问redis" class="headerlink" title="4.3 外网访问redis"></a>4.3 外网访问redis</h3><p>首先进行配置防火墙,开放6379端口</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">firewall-cmd --zone=public --add-port=6379/tcp --permanent<br></code></pre></td></tr></table></figure>
+
+<p>重启防火墙以使配置即时生效</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">systemctl restart firewalld<br></code></pre></td></tr></table></figure>
+
+<p>查看系统所有开放的端口</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh">firewall-cmd --zone=public --list-ports<br></code></pre></td></tr></table></figure>
+
+<h3 id="4-4-可能会遇到的问题"><a href="#4-4-可能会遇到的问题" class="headerlink" title="4.4 可能会遇到的问题"></a>4.4 可能会遇到的问题</h3><p>可能开放端口后依旧无法访问，原因是虽然防火墙开放了6379端口，但是外网还是无法访问的，因为redis监听的是127.0.0.1:6379，并不监听外网的请求。这时候需要这样做。</p>
+<ul>
+<li>把文件夹目录里的redis.conf配置文件里的bind 127.0.0.1前面加#注释掉</li>
+<li>redis-cli连接到redis后，通过 <code>config get daemonize</code>和<code>config get protected-mode</code> 是不是都为no，如果不是，就用<code>config set 配置名 属性</code> 改为no。</li>
+</ul>
+<h2 id="5-常用命令"><a href="#5-常用命令" class="headerlink" title="5. 常用命令"></a>5. 常用命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><code class="hljs sh"><span class="hljs-comment">#启动</span><br>./redis/src/redis-server redis.conf<br><br><span class="hljs-comment">#停止</span><br><span class="hljs-built_in">kill</span> -9 pid值  或者 ./redis-cli shutdown<br><br><span class="hljs-comment">#查看服务</span><br>ps aux|grep redis<br><br><span class="hljs-comment">#客户端连接</span><br>./redis-cli -h 127.0.0.1 -p 6379<br><br><span class="hljs-comment">#检测6379端口是否在监听</span><br>netstat -lntp | grep 6379<br></code></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>redis</tag>
       </tags>
   </entry>
   <entry>
@@ -490,82 +505,6 @@
       </tags>
   </entry>
   <entry>
-    <title>redis的安装与配置</title>
-    <url>/2021/07/19/redis-insta/</url>
-    <content><![CDATA[<p>Redis 是完全开源的，遵守 BSD 协议，是一个高性能的 key-value 数据库。</p>
-<span id="more"></span>
-
-<h4 id="获取redis资源"><a href="#获取redis资源" class="headerlink" title="获取redis资源"></a>获取redis资源</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">wegt https://download.redis.io/releases/redis-6.2.4.tar.gz<br></code></pre></td></tr></table></figure>
-
-<ul>
-<li>以上是redis官方最新版本</li>
-<li>若需其它版本 可以进入  <a href="https://redis.io/">官网查看</a></li>
-</ul>
-<h4 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">tar -zxvf redis-6.2.4.tar.gz<br></code></pre></td></tr></table></figure>
-
-<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>首先进入目录</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cd redis-6.2.4<br></code></pre></td></tr></table></figure>
-
-<p>编译</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">make<br></code></pre></td></tr></table></figure>
-
-<p>进入src进行安装</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cd src<br><br>make install PREFIX=/usr/local/redis<br></code></pre></td></tr></table></figure>
-
-<h4 id="移动配置文件到安装目录下"><a href="#移动配置文件到安装目录下" class="headerlink" title="移动配置文件到安装目录下"></a>移动配置文件到安装目录下</h4><p>创建etc文件</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">mkdir /usr/local/redis/etc<br></code></pre></td></tr></table></figure>
-
-<p>移动 redis.conf文件</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">mv redis.conf /usr/local/redis/etc<br></code></pre></td></tr></table></figure>
-
-<h4 id="配置redis为后台启动"><a href="#配置redis为后台启动" class="headerlink" title="配置redis为后台启动"></a>配置redis为后台启动</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">vi /usr/local/redis/etc/redis.conf //将daemonize no 改成daemonize yes<br></code></pre></td></tr></table></figure>
-
-<h4 id="将redis加入到开机启动"><a href="#将redis加入到开机启动" class="headerlink" title="将redis加入到开机启动"></a>将redis加入到开机启动</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">vi /etc/rc.local<br></code></pre></td></tr></table></figure>
-
-<p>在里面添加内容：<code>/usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf</code></p>
-<p>意思就是开机调用这段开启redis的命令</p>
-<h4 id="开启redis"><a href="#开启redis" class="headerlink" title="开启redis"></a>开启redis</h4><figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">/usr/local/redis/bin/redis-server /usr/local/redis/etc/redis.conf <br></code></pre></td></tr></table></figure>
-
-<h4 id="配置redis-cli指令"><a href="#配置redis-cli指令" class="headerlink" title="配置redis-cli指令"></a>配置redis-cli指令</h4><p>将redis-cli,redis-server拷贝到bin下，让redis-cli指令可以在任意目录下直接使用</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">cp /usr/local/redis/bin/redis-server /usr/local/bin/<br><br>cp /usr/local/redis/bin/redis-cli /usr/local/bin/<br></code></pre></td></tr></table></figure>
-
-<h4 id="设置redis密码"><a href="#设置redis密码" class="headerlink" title="设置redis密码"></a>设置redis密码</h4><figure class="highlight arduino"><table><tr><td class="code"><pre><code class="hljs arduino">redis-cli<br><br><span class="hljs-comment">//查看密码</span><br>config get requirepass<br><br><span class="hljs-comment">//设置密码</span><br>config set requirepass yourpassword<br></code></pre></td></tr></table></figure>
-
-<p>重启redis服务</p>
-<p>输入 redis-cli 进入命令模式，使用 auth ‘*****’ （****为你设置的密码）登陆</p>
-<h4 id="让外网能够访问redis"><a href="#让外网能够访问redis" class="headerlink" title="让外网能够访问redis"></a>让外网能够访问redis</h4><p>首先进行配置防火墙,开放6379端口</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">firewall-cmd --zone=public --add-port=6379/tcp --permanent<br></code></pre></td></tr></table></figure>
-
-<p>重启防火墙以使配置即时生效</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">systemctl restart firewalld<br></code></pre></td></tr></table></figure>
-
-<p>查看系统所有开放的端口</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><code class="hljs shell">firewall-cmd --zone=public --list-ports<br></code></pre></td></tr></table></figure>
-
-<h4 id="可能会遇到的问题"><a href="#可能会遇到的问题" class="headerlink" title="可能会遇到的问题"></a>可能会遇到的问题</h4><p>可能开放端口后依旧无法访问，原因是虽然防火墙开放了6379端口，但是外网还是无法访问的，因为redis监听的是127.0.0.1:6379，并不监听外网的请求。这时候需要这样做。</p>
-<ul>
-<li>把文件夹目录里的redis.conf配置文件里的bind 127.0.0.1前面加#注释掉</li>
-<li>redis-cli连接到redis后，通过 <code>config get daemonize</code>和<code>config get protected-mode</code> 是不是都为no，如果不是，就用<code>config set 配置名 属性</code> 改为no。</li>
-</ul>
-<h4 id="常用redis命令"><a href="#常用redis命令" class="headerlink" title="常用redis命令"></a>常用redis命令</h4><ul>
-<li><p>redis-server &#x2F;usr&#x2F;local&#x2F;redis&#x2F;etc&#x2F;redis.conf &#x2F;&#x2F;启动redis</p>
-</li>
-<li><p>pkill redis  &#x2F;&#x2F;停止redis</p>
-</li>
-<li><p>ps -ef |grep redis &#x2F;&#x2F;检测后台进程是否存在</p>
-</li>
-<li><p>netstat -lntp | grep 6379 &#x2F;&#x2F;检测6379端口是否在监听</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>redis</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SpingIoc浅析</title>
     <url>/2021/09/10/springioc/</url>
     <content><![CDATA[<p>学习过Spring框架的人一定都会听过Spring的IoC(控制反转) 、DI(依赖注入)这两个概念，今天分享网上的一些技术大牛们对Spring框架的IOC的理解以及谈谈我对Spring Ioc的理解。</p>
@@ -662,6 +601,7 @@
       </categories>
       <tags>
         <tag>Office</tag>
+        <tag>Windows</tag>
       </tags>
   </entry>
   <entry>
